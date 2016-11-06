@@ -11,33 +11,33 @@ Installation
 
 1. Go to your Arduino sketch:
 
-```
-cd path-to-your-sketch
-```
+    ```
+    cd path-to-your-sketch
+    ```
 
 1. Clone this repository
 
-```
-git clone https://github.com/neomilium/esp8266-arduino.mk.git
-```
+    ```
+    git clone https://github.com/neomilium/esp8266-arduino.mk.git
+    ```
 
 1. Copy minimal makefile
 
-```
-cp esp8266-arduino.mk/Makefile.sample Makefile
-```
+    ```
+    cp esp8266-arduino.mk/Makefile.sample Makefile
+    ```
 
 Usage
 =====
 
  * (Re)Build your sketch
 
-```
-make
-```
+    ```
+    make
+    ```
 
  * Upload using serial
 
-```
-make upload
-```
+    ```
+    make upload
+    ```
