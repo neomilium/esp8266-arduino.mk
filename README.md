@@ -21,6 +21,12 @@ Installation
     git clone https://github.com/neomilium/esp8266-arduino.mk.git
     ```
 
+    Note: if you are already in a Git repository, you could use it as submodule:
+
+    ```
+    git submodule add https://github.com/neomilium/esp8266-arduino.mk.git
+    ```
+
 1. Copy minimal makefile
 
     ```
