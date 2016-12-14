@@ -7,8 +7,9 @@ TARGET_INO ?= $(TARGET).ino
 
 ARDUINO_PATH ?= $(shell ls -1dt /opt/arduino-* | head -1)
 
+ARDUINO_USER_SKETCHBOOK ?= $(shell grep --color=none 'sketchbook.path' $(HOME)/.arduino15/preferences.txt | sed -e 's/^sketchbook\.path=//')
 ARDUINO_USER_PACKAGES ?= $(HOME)/.arduino15/packages
-ARDUINO_USER_LIBRARIES ?= $(HOME)/Arduino/libraries
+ARDUINO_USER_LIBRARIES ?= $(ARDUINO_USER_SKETCHBOOK)/libraries
 
 BUILDER_OPT_FQBN ?= '-fqbn=esp8266:esp8266:d1_mini:CpuFrequency=80,UploadSpeed=921600,FlashSize=4M3M'
 BUILDER_OPT_IDE_VERSION ?= '-ide-version=10608'
