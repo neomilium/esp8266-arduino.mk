@@ -5,7 +5,7 @@ SERIAL_PORT ?= /dev/ttyUSB0
 TARGET_BIN ?= $(BUILD_PATH)/$(TARGET).ino.bin
 TARGET_INO ?= $(TARGET).ino
 
-ARDUINO_PATH=$(shell ls -dt /opt/arduino-*)
+ARDUINO_PATH ?= $(shell ls -1dt /opt/arduino-* | head -1)
 
 ARDUINO_USER_PACKAGES ?= $(HOME)/.arduino15/packages
 ARDUINO_USER_LIBRARIES ?= $(HOME)/Arduino/libraries
