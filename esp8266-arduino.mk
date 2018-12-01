@@ -10,6 +10,7 @@ ARDUINO_PATH ?= $(shell ls -1dt /opt/arduino-* | head -1)
 ARDUINO_USER_SKETCHBOOK ?= $(shell grep --color=none 'sketchbook.path' $(HOME)/.arduino15/preferences.txt | sed -e 's/^sketchbook\.path=//')
 ARDUINO_USER_PACKAGES ?= $(HOME)/.arduino15/packages
 ARDUINO_USER_LIBRARIES ?= $(ARDUINO_USER_SKETCHBOOK)/libraries
+ARDUINO_CORE_ESP8266_PATH ?= $(shell ls -1dt $(ARDUINO_USER_PACKAGES)/esp8266/hardware/esp8266/* | head -1)
 
 BUILDER_OPT_FQBN ?= '-fqbn=esp8266:esp8266:d1_mini:CpuFrequency=80,UploadSpeed=921600,FlashSize=4M3M'
 BUILDER_OPT_IDE_VERSION ?= '-ide-version=10608'
@@ -53,7 +54,7 @@ upload: $(TARGET_BIN)
 	$(ARDUINO_USER_PACKAGES)/esp8266/tools/esptool/0.4.9/esptool -vv -cd nodemcu -cb 921600 -cp $(SERIAL_PORT) -ca 0x00000 -cf $(TARGET_BIN)
 
 upload-ota: $(TARGET_BIN)
-	python $(ARDUINO_USER_PACKAGES)/esp8266/hardware/esp8266/2.4.1/tools/espota.py -i $(IP) -f $(TARGET_BIN)
+	python $(ARDUINO_CORE_ESP8266_PATH)/tools/espota.py -i $(IP) -f $(TARGET_BIN)
 
 clean:
 	rm -rf $(BUILD_PATH)
