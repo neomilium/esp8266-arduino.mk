@@ -52,5 +52,8 @@ dump-prefs:
 upload: $(TARGET_BIN)
 	$(ARDUINO_USER_PACKAGES)/esp8266/tools/esptool/0.4.9/esptool -vv -cd nodemcu -cb 921600 -cp $(SERIAL_PORT) -ca 0x00000 -cf $(TARGET_BIN)
 
+upload-ota: $(TARGET_BIN)
+	python $(ARDUINO_USER_PACKAGES)/esp8266/hardware/esp8266/2.4.1/tools/espota.py -i $(IP) -f $(TARGET_BIN)
+
 clean:
 	rm -rf $(BUILD_PATH)
