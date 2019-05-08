@@ -44,3 +44,10 @@
     ```
     make upload
     ```
+
+ * Upload using OTA
+
+    ```
+    make upload-ota
+    ```
+    Note: this requires you set the target's IP in `IP` variable (e.g. in `Makefile`)
