@@ -1,13 +1,11 @@
 # esp8266-arduino.mk
 
-Requirements
-============
+## Requirements
 
  * [Arduino](https://arduino.cc) >= 1.6.7
  * [Arduino core for ESP8266 WiFi chip](https://github.com/esp8266/Arduino)
 
-Installation
-============
+## Installation
 
 1. Go to your Arduino sketch:
 
@@ -33,8 +31,7 @@ Installation
     cp esp8266-arduino.mk/Makefile.sample Makefile
     ```
 
-Usage
-=====
+## Usage
 
  * (Re)Build your sketch
 
